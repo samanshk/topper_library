@@ -41,10 +41,11 @@ class _ProfileState extends State<Profile> {
 
   uploadImage() async {
     var uid = user.uid;
-    var ref = storage.ref('images/$uid.jpeg');
+    var ref = storage.ref('images/$uid');
     ref.putFile(_image);
-    setState(() async {
-      img_url = await ref.getDownloadURL();      
+    String url = await ref.getDownloadURL();
+    setState(()  {
+      img_url = url;      
     });
   }
 
@@ -103,11 +104,11 @@ class _ProfileState extends State<Profile> {
         ? Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              img_url == '' ?
+              // img_url == '' ?
               Text(
-                label,
+                img_url == '' ? label : 'File Uploaded',
                 style: TextStyle(color: Colors.black, fontSize: 14),
-              ): Image.network(img_url),
+              ),
               RaisedButton(
                 color: Color(0xff0e427b),
                 shape: RoundedRectangleBorder(

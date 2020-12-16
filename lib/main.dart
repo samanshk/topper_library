@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
 
   Widget nextPage() {
     var user = FirebaseAuth.instance.currentUser; 
-    return user != null ? Library() : Home;
+    return user != null ? Library() : Home();
   }
 
   @override
