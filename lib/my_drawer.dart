@@ -95,7 +95,7 @@ class MyDrawer extends StatelessWidget {
             ops(context, 'images/drawerIcons/6.png', 'Terms and Conditions',
                 Dashboard()),
             ops(context, 'images/exe.png', 'Refer', Refer()),
-            ops(context, 'images/drawerIcons/7.png', 'Share', Share()),
+            ops(context, 'images/drawerIcons/7.png', 'Share', ShareScreen()),
             ops(context, 'images/drawerIcons/8.png', 'Reset Password',
                 ResetPassword()),
             ops(context, 'images/drawerIcons/9.png', 'Log Out', Home()),

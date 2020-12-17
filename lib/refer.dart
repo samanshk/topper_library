@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 class Refer extends StatelessWidget {
   @override
@@ -73,24 +74,27 @@ class Refer extends StatelessWidget {
                           ),
                         ),
                       ),
-                      GridView.count(
-                        crossAxisCount: 4,
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        crossAxisSpacing: 16,
-                        mainAxisSpacing: 25,
-                        padding: EdgeInsets.all(16),
-                        childAspectRatio: 2,
-                        children: <Widget>[
-                          Image.asset('images/mail.png', height: 10, width: 10,),
-                          Image.asset('images/profile.png', height: 10,),
-                          Image.asset('images/facbook.png', height: 10,),
-                          Image.asset('images/twitter.png', height: 10,),
-                          Image.asset('images/google.png', height: 10,),
-                          Image.asset('images/linkedin.png', height: 10,),
-                          Image.asset('images/whatsup.png', height: 10,),
-                          Image.asset('images/pin.png', height: 10,),
-                        ],
+                      GestureDetector(
+                        onTap: () => Share.share('https://drive.google.com/file/d/1cTa_24bVIFm5ShPDV4DmD_PdXJAgFWFT/view?usp=sharing'),
+                        child: GridView.count(
+                          crossAxisCount: 4,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          crossAxisSpacing: 16,
+                          mainAxisSpacing: 25,
+                          padding: EdgeInsets.all(16),
+                          childAspectRatio: 2,
+                          children: <Widget>[
+                            Image.asset('images/mail.png', height: 10, width: 10,),
+                            Image.asset('images/profile.png', height: 10,),
+                            Image.asset('images/facbook.png', height: 10,),
+                            Image.asset('images/twitter.png', height: 10,),
+                            Image.asset('images/google.png', height: 10,),
+                            Image.asset('images/linkedin.png', height: 10,),
+                            Image.asset('images/whatsup.png', height: 10,),
+                            Image.asset('images/pin.png', height: 10,),
+                          ],
+                        ),
                       )
                     ],
                   ),

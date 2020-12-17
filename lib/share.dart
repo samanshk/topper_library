@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
-class Share extends StatelessWidget {
+class ShareScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -58,24 +59,27 @@ class Share extends StatelessWidget {
                             ),
                           ),
                         ),
-                        GridView.count(
-                          crossAxisCount: 4,
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          crossAxisSpacing: 16,
-                          mainAxisSpacing: 16,
-                          padding: EdgeInsets.all(16),
-                          childAspectRatio: 1.5,
-                          children: <Widget>[
-                            Image.asset('images/mail.png'),
-                            Image.asset('images/profile.png'),
-                            Image.asset('images/facbook.png'),
-                            Image.asset('images/twitter.png'),
-                            Image.asset('images/google.png'),
-                            Image.asset('images/linkedin.png'),
-                            Image.asset('images/whatsup.png'),
-                            Image.asset('images/pin.png'),
-                          ],
+                        GestureDetector(
+                        onTap: () => Share.share('https://drive.google.com/file/d/1cTa_24bVIFm5ShPDV4DmD_PdXJAgFWFT/view?usp=sharing'),
+                          child: GridView.count(
+                            crossAxisCount: 4,
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            crossAxisSpacing: 16,
+                            mainAxisSpacing: 16,
+                            padding: EdgeInsets.all(16),
+                            childAspectRatio: 1.5,
+                            children: <Widget>[
+                              Image.asset('images/mail.png'),
+                              Image.asset('images/profile.png'),
+                              Image.asset('images/facbook.png'),
+                              Image.asset('images/twitter.png'),
+                              Image.asset('images/google.png'),
+                              Image.asset('images/linkedin.png'),
+                              Image.asset('images/whatsup.png'),
+                              Image.asset('images/pin.png'),
+                            ],
+                          ),
                         )
                       ],
                     ),
